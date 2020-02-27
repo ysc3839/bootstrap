@@ -3,25 +3,31 @@
 //
 
 .table {
+  display: table;
   width: 100%;
   margin-bottom: $spacer;
   color: $table-color;
   background-color: $table-bg; // Reset for nesting within parents with `background-color`.
 
-  th,
-  td {
+  .th,
+  .td {
+    display: table-cell;
     padding: $table-cell-padding;
     vertical-align: top;
     border-top: $table-border-width solid $table-border-color;
   }
 
-  thead th {
+  .thead .th {
     vertical-align: bottom;
     border-bottom: (2 * $table-border-width) solid $table-border-color;
   }
 
-  tbody + tbody {
+  .tbody + .tbody {
     border-top: (2 * $table-border-width) solid $table-border-color;
+  }
+
+  .tr {
+    display: table-row;
   }
 }
 
@@ -31,8 +37,8 @@
 //
 
 .table-sm {
-  th,
-  td {
+  .th,
+  .td {
     padding: $table-cell-padding-sm;
   }
 }
@@ -45,24 +51,24 @@
 .table-bordered {
   border: $table-border-width solid $table-border-color;
 
-  th,
-  td {
+  .th,
+  .td {
     border: $table-border-width solid $table-border-color;
   }
 
-  thead {
-    th,
-    td {
+  .thead {
+    .th,
+    .td {
       border-bottom-width: 2 * $table-border-width;
     }
   }
 }
 
 .table-borderless {
-  th,
-  td,
-  thead th,
-  tbody + tbody {
+  .th,
+  .td,
+  .thead .th,
+  .tbody + .tbody {
     border: 0;
   }
 }
@@ -72,7 +78,7 @@
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
 
 .table-striped {
-  tbody tr:nth-of-type(#{$table-striped-order}) {
+  .tbody .tr:nth-of-type(#{$table-striped-order}) {
     background-color: $table-accent-bg;
   }
 }
@@ -83,7 +89,7 @@
 // Placed here since it has to come after the potential zebra striping
 
 .table-hover {
-  tbody tr {
+  .tbody .tr {
     @include hover() {
       color: $table-hover-color;
       background-color: $table-hover-bg;
@@ -111,7 +117,7 @@
 // stylelint-disable-next-line no-duplicate-selectors
 .table {
   .thead-dark {
-    th {
+    .th {
       color: $table-dark-color;
       background-color: $table-dark-bg;
       border-color: $table-dark-border-color;
@@ -119,7 +125,7 @@
   }
 
   .thead-light {
-    th {
+    .th {
       color: $table-head-color;
       background-color: $table-head-bg;
       border-color: $table-border-color;
@@ -131,9 +137,9 @@
   color: $table-dark-color;
   background-color: $table-dark-bg;
 
-  th,
-  td,
-  thead th {
+  .th,
+  .td,
+  .thead .th {
     border-color: $table-dark-border-color;
   }
 
@@ -148,7 +154,7 @@
   }
 
   &.table-hover {
-    tbody tr {
+    .tbody .tr {
       @include hover() {
         color: $table-dark-hover-color;
         background-color: $table-dark-hover-bg;

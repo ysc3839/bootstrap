@@ -31,10 +31,13 @@
 // Tabs
 //
 
-.nav-tabs {
+.cbi-tabmenu {
+  @extend .nav;
+
   border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
 
-  .nav-item {
+  .cbi-tab,
+  .cbi-tab-disabled {
     margin-bottom: -$nav-tabs-border-width;
   }
 
@@ -53,8 +56,11 @@
     }
   }
 
-  .nav-link.active,
-  .nav-item.show .nav-link {
+  a {
+    @extend .nav-link;
+  }
+
+  .cbi-tab a {
     color: $nav-tabs-link-active-color;
     background-color: $nav-tabs-link-active-bg;
     border-color: $nav-tabs-link-active-border-color;

@@ -42,7 +42,7 @@
   > .form-control,
   > .custom-select {
     &:not(:last-child) { @include border-right-radius(0); }
-    &:not(:first-child) { @include border-left-radius(0); }
+    &:not(:first-child):not(.cbi-input-password) { @include border-left-radius(0); }
   }
 
   // Custom file inputs have more complex markup, thus requiring different
@@ -71,7 +71,7 @@
   // Ensure buttons are always above inputs for more visually pleasing borders.
   // This isn't needed for `.input-group-text` since it shares the same border-color
   // as our inputs.
-  .btn {
+  &.btn {
     position: relative;
     z-index: 2;
 
@@ -80,12 +80,12 @@
     }
   }
 
-  .btn + .btn,
+  /* .btn + .btn,
   .btn + .input-group-text,
   .input-group-text + .input-group-text,
   .input-group-text + .btn {
     margin-left: -$input-border-width;
-  }
+  } */
 }
 
 .input-group-prepend { margin-right: -$input-border-width; }

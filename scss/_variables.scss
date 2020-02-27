@@ -258,7 +258,7 @@ $caret-vertical-align:        $caret-width * .85 !default;
 $caret-spacing:               $caret-width * .85 !default;
 
 $transition-base:             all .2s ease-in-out !default;
-$transition-fade:             opacity .15s linear !default;
+$transition-fade:             opacity .25s ease-in !default;
 $transition-collapse:         height .35s ease !default;
 
 $embed-responsive-aspect-ratios: () !default;
@@ -516,7 +516,7 @@ $form-check-inline-margin-x:            .75rem !default;
 $form-check-inline-input-margin-x:      .3125rem !default;
 
 $form-grid-gutter-width:                10px !default;
-$form-group-margin-bottom:              1rem !default;
+$form-group-margin-top:                 1rem !default;
 
 $input-group-addon-color:               $input-color !default;
 $input-group-addon-bg:                  $gray-200 !default;
@@ -761,7 +761,7 @@ $navbar-dark-brand-hover-color:           $navbar-dark-active-color !default;
 
 $dropdown-min-width:                10rem !default;
 $dropdown-padding-y:                .5rem !default;
-$dropdown-spacer:                   .125rem !default;
+$dropdown-spacer:                   0 !default;
 $dropdown-font-size:                $font-size-base !default;
 $dropdown-color:                    $body-color !default;
 $dropdown-bg:                       $white !default;

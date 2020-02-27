@@ -1,0 +1,185 @@
+// Header
+body {
+  padding-top: 56px;
+}
+
+// stylelint-disable selector-no-qualifying-type
+.dropdown:hover div.dropdown-menu {
+  display: block;
+}
+// stylelint-enable
+
+// stylelint-disable selector-max-id
+#tabmenu {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+
+  .nav {
+    flex-wrap: nowrap;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+
+    .nav-link {
+      padding-top: .75rem;
+      padding-bottom: .75rem;
+      font-size: .875rem;
+      color: #6c757d;
+    }
+
+    .nav-link:hover {
+      color: #007bff;
+    }
+
+    .active {
+      font-weight: 500;
+      color: #343a40;
+    }
+  }
+}
+
+#maincontent {
+  margin-top: 1rem;
+}
+// stylelint-enable
+
+// Label
+.label {
+  @extend .badge;
+
+  &.important {
+    @extend .badge-danger;
+  }
+
+  &.warning {
+    @extend .badge-warning;
+  }
+
+  &.success {
+    @extend .badge-success;
+  }
+
+  &.notice {
+    @extend .badge-info;
+  }
+}
+
+// Alert Message
+.alert-message {
+  @extend .alert;
+
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
+    @extend .alert-heading;
+  }
+
+  &.danger,
+  &.error {
+    @extend .alert-danger;
+  }
+
+  &.success {
+    @extend .alert-success;
+  }
+
+  &.info {
+    @extend .alert-info;
+  }
+
+  &.warning {
+    @extend .alert-warning;
+  }
+}
+
+// Button
+.cbi-button:not(.cbi-dropdown) {
+  @extend .btn, .btn-sm;
+}
+
+.cbi-button-apply:not(.cbi-dropdown) {
+  @extend .btn-outline-primary;
+}
+
+.cbi-button-save:not(.cbi-dropdown) {
+  @extend .btn-outline-success;
+}
+
+.cbi-button-reset:not(.cbi-dropdown) {
+  @extend .btn-outline-danger;
+}
+
+.cbi-button-neutral:not(.cbi-dropdown) {
+  @extend .btn-outline-secondary;
+}
+
+// Tabs
+[data-tab-title] {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+[data-tab-active="true"] {
+  height: auto;
+  overflow: visible;
+  opacity: 1;
+  @include transition($transition-fade);
+}
+
+// CBI Value
+.cbi-value {
+  @extend .form-group;
+  display: inline-flex;
+  align-items: baseline;
+  width: 100%;
+}
+
+.cbi-value-title {
+  width: 16rem;
+  padding-right: 1rem;
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.cbi-input-text,
+.cbi-input-password,
+.cbi-input-select {
+  @extend .form-control;
+}
+
+.cbi-value-description {
+  @extend .form-text, .text-muted;
+}
+
+.cbi-value-field {
+  width: 50%;
+
+  > div {
+    @extend .input-group;
+  }
+}
+
+// stylelint-disable selector-no-qualifying-type
+input[type="text"] + .cbi-button,
+input[type="password"] + .cbi-button,
+select + .cbi-button {
+  @include border-left-radius(0);
+  @extend .input-group-append;
+}
+// stylelint-enable
+
+// CBI Section
+.cbi-map > .cbi-section {
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: $white;
+  // stylelint-disable-next-line property-blacklist
+  border-radius: $border-radius; // .rounded
+  box-shadow: $box-shadow-sm; // .shadow-sm
+}

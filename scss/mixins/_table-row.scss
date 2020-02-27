@@ -5,16 +5,16 @@
   // inheritance to nested tables.
   .table-#{$state} {
     &,
-    > th,
-    > td {
+    > .th,
+    > .td {
       background-color: $background;
     }
 
     @if $border != null {
-      th,
-      td,
-      thead th,
-      tbody + tbody {
+      .th,
+      .td,
+      .thead .th,
+      .tbody + .tbody {
         border-color: $border;
       }
     }
@@ -29,8 +29,8 @@
       @include hover() {
         background-color: $hover-background;
 
-        > td,
-        > th {
+        > .td,
+        > .th {
           background-color: $hover-background;
         }
       }
